@@ -23,10 +23,10 @@ document.addEventListener("keydown",function(event){
     buttonAnimation(event.key);
 });
 
-
+//create a function which should make a sound whenever some action is done 
 function makeSound(key){
 
-
+//using switch-case to get audio as per the input 
     switch (key) {
         case "w":
             var crash = new Audio ('sounds/crash.mp3');
@@ -64,12 +64,15 @@ function makeSound(key){
 
 }
 
+// create a function for animation
 function buttonAnimation(currentKey){
 
     var activeKey = document.querySelector("." + currentKey)
 
+    // add class pressed ( see the properties in the css file).
     activeKey.classList.add("pressed");
 
+    // setting a timeout function ( creating a function i.e., removing the class after 100ms)
     setTimeout(function(){
         activeKey.classList.remove("pressed");
     }, 100); 
